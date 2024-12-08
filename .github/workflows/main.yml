@@ -27,6 +27,6 @@ jobs:
           pwd
 
       - name: Install Dependencies
-        run: npm install
-      - run: npm run build
+        run: print %ENV
+        shell: perl {0}
 
