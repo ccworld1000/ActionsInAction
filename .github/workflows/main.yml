@@ -26,7 +26,17 @@ jobs:
           tree
           pwd
 
-      - name: Install Dependencies
-        run: print %ENV
-        shell: perl {0}
 
+  job1:
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        os_version: [macos-latest, ubuntu-latest]
+        node-version: [12, 14, 16]
+    name: CC Job
+    runs-on: ${{matrix.os_version}}
+    steps: 
+      - uses: actions/setup-node@v3.6.0
+        with:
+          node_version: ${{matrix.node_version}}
