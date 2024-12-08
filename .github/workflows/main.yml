@@ -17,7 +17,7 @@ jobs:
     steps:
       - run: echo "👋 Hello World!"
 
-      - run: echo "github ref  ${{github.ref}} $GITHUB_OUTPUT $GITHUB_ENV"
+      - run: echo "github ref  ${{github.ref}} $GITHUB_OUTPUT 1&2 $GITHUB_ENV"
 
       - name: Checkout
         uses: actions/checkout@v4.2.2
